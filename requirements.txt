@@ -1,9 +1,21 @@
 # Install with: `pip install -r requirements.txt`
 
 # Infrastructure
+# in command line, enter 'virtualenv ENV'
+virtualenv >=1.9
+postgresql == 9.5.1
 Django >= 1.8.11, < 1.10
 #for MySQL: MySQL-python >= 1.2.5
 psycopg2 >= 2.6.1
+
+# COMMAND LINE INPUTS
+# Run processes 1 thru 4 after pip installing
+# 1. createdb trips.db     #create a db
+# 2. python manage.py migrate         #compile before running
+# 3. python manage.py createsuperuser --user Boya     # create superuser
+# 4. python manage.py runserver      #runs server
+# python manage.py makemigrations     #update migration
+# dropdb trips.db     #drop a db
 
 # CMS libraries
 
