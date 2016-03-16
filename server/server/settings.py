@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'trips',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -77,14 +78,12 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.path.join(BASE_DIR, 'trips.db'),
-        'USER': 'Vivavious Toasters'
-        'TIME_ZONE': 'America/Los_Angeles'
+        'NAME': 'trips.db',
     }
 }
 
 
-# Password validation
+# Password password_validationation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
