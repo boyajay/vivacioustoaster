@@ -19,18 +19,18 @@ module.exports = {
   },
 
   getFriends: (req, res, next) => {
-    var userId = req.params.id;
+    const userId = req.params.id;
     // this query includes the models connected to the user
     // by the belongsToMany 'Friend' association under the key
     // 'Friends'. We can then access with 'user.Friends'.
     User.find({
-      where: {id: userId},
-      include: [{model: User, as: 'Friends'}]
+      where: { id: userId },
+      include: [{ model: User, as: 'Friends' }],
     })
-    .then(function(user) {
+    .then((user) => {
       res.json(user.Friends);
     })
-    .catch(function(err) {
+    .catch((err) => {
       helpers.errorHandler(err, req, res, next);
     });
   },
