@@ -1,4 +1,4 @@
-const User = require('./users/usersController.js');
+const User = require('./users');
 const jwt = require('jwt-simple');
 
 module.exports = {
@@ -8,7 +8,6 @@ module.exports = {
     const fbId = {
       fbId: profile.id,
     };
-
     User.findOne(fbId)
       .then((match) => {
         // create user if there's no match
@@ -33,4 +32,5 @@ module.exports = {
         console.error('findOrCreate error: ', error);
       });
   },
+
 };
