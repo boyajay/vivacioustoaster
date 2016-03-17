@@ -18,6 +18,23 @@ module.exports = {
     });
   },
 
+  getFriends: (req, res, next) => {
+    var userId = req.params.id;
+    // this query includes the models connected to the user
+    // by the belongsToMany 'Friend' association under the key
+    // 'Friends'. We can then access with 'user.Friends'.
+    User.find({
+      where: {id: userId},
+      include: [{model: User, as: 'Friends'}]
+    })
+    .then(function(user) {
+      res.json(user.Friends);
+    })
+    .catch(function(err) {
+      helpers.errorHandler(err, req, res, next);
+    });
+  },
+
   findOrCreate: (profile) => {
     const name = profile.displayName;
     const picture = profile.photos[0].value;
