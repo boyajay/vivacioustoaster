@@ -14,7 +14,7 @@ const UserFriend = db.define('friends', {});
 // creates userId column in friends join table
 // creates friendId column in friends join table
 // will add methods to User (ex. User.getFriends())
-User.belongsToMany(User, { as: 'Friends', through: UserFriend, constraints: false });
+User.belongsToMany(User, { as: 'Friends', through: UserFriend });
 
 UserFriend.sync();
 User.sync();
@@ -34,10 +34,11 @@ User.createToken = fbId =>
 User.getUserFriends = user => user.getFriends().catch(err => err);
 
 User.findOrCreate = profile => {
+  const friends = profile._json.friends.data;
   const name = profile.displayName;
   const picUrl = profile.photos[0].value;
   const fbId = profile.id;
-  return User.findOne({ fbId })
+  return User.findOne({ where: { fbId } })
     .then(match => {
       // create user if there's no match
       if (!match) {
@@ -55,6 +56,19 @@ User.findOrCreate = profile => {
       };
       return match.update(updatedInfo);
     })
+    .then(user =>
+      Promise.all(friends.map(fbFriend =>
+        User.find({ where: { fbId: fbFriend.id } })
+        .then(friend => {
+          // use the Sequelize method provided by the belongsToMany
+          // association to add a friend for this user
+          friend.addFriend(user);
+        })
+        .catch(err => {
+          console.error(err);
+        })
+      ))
+    )
     .catch(error => {
       console.error('findOrCreate error: ', error);
     });

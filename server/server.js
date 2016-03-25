@@ -37,8 +37,8 @@ passport.use(new Strategy({
 },
   (accessToken, refreshToken, profile, cb) => {
     // call a function which checks if user is in db
-    User.findOrCreate(profile);
-    return cb(null, profile);
+    User.findOrCreate(profile)
+    .then(() => cb(null, profile));
   }));
 
 // Configure Passport authenticated session persistence.
