@@ -70,8 +70,12 @@ export const login = () =>
         .then(res => res.json())
         .then(friendsList => {
           friendsList.forEach(friend => {
-            dispatch(addFriend(friend));
+            friend.addedToTrip = false;
+            delete friend.friends;
+            delete friend.createdAt;
+            delete friend.updatedAt;
           });
+          dispatch(addFriend(friendsList));
         })
         .catch(err => err);
         dispatch(push('/home'));

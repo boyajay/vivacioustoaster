@@ -6,13 +6,6 @@ const initialState = Immutable.Map({
 
 const friend = (state, action) => {
   switch (action.type) {
-    case 'ADD_FRIEND':
-      return {
-        name: action.payload.name,
-        fbId: action.payload.fbId,
-        picUrl: action.payload.picUrl,
-        addedToTrip: false,
-      };
     case 'TOGGLE_ADD_FRIEND':
       if (state.id !== action.payload.id) {
         return state;
@@ -32,9 +25,7 @@ const friend = (state, action) => {
 const friends = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_FRIEND':
-      const friendsToUpdate = state.get('friends');
-      const friendsList = [...friendsToUpdate, friend(null, action)];
-      return state.set('friends', friendsList);
+      return state.set('friends', action.payload);
     case 'TOGGLE_ADD_FRIEND':
       const oldFriends = state.get('friends');
       const updatedFriends = oldFriends.map(f => friend(f, action));
