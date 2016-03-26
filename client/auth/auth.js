@@ -15,11 +15,19 @@ class Auth extends React.Component {
 
   render() {
     return (
-      <div>
-      we are on auth page!
-      <form action="/auth/facebook">
-        <button type="login">Login with Facebook</button>
-      </form>
+      <div className="landingPage">
+        <div className="logo">
+        voyAger
+        </div>
+        <div className="landingDescrip">
+        Where to next? For the solo adventurer or group expeditions,
+        Voyager will make planning a breeze.
+        </div>
+        <form action="/auth/facebook">
+          <button type="login" className="loginBtn">Login with Facebook
+            <br /> to get started
+          </button>
+        </form>
       </div>
     );
   }
