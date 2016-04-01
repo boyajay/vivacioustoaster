@@ -43,6 +43,7 @@ class DestSearch extends React.Component {
           onChange={(event, newDate) => this.props.onChangeEndDate(newDate)}
           ref="endDatePick"
           className="datePicker"
+          style={{ marginBottom: '10px' }}
         />
         <RaisedButton
           label="Add Destination"
@@ -52,6 +53,7 @@ class DestSearch extends React.Component {
           style={{
             opacity: this.props.startDate && this.props.endDate && this.props.location ? '1' : '0.4', // eslint-disable-line
           }}
+          primary={this.props.startDate && this.props.endDate && this.props.location ? true: false} // eslint-disable-line
           className="addDest"
           onClick={ () => {
             this.props.onAddDest();

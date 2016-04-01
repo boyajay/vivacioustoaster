@@ -148,7 +148,7 @@ div.tooltip:hover span.tooltip-text {
   justify-content: center;
   margin-bottom: 2%;
   position: relative;
-  width: 35%;
+  width: 38%;
   text-align: left;
 }
 .geosuggest__input {
@@ -212,14 +212,8 @@ div.tooltip:hover span.tooltip-text {
 }
 
 .geosuggest-item--active {
-  background: #267dc0;
-  color: #fff;
-
-}
-
-.geosuggest-item--active:hover,
-.geosuggest-item--active:focus {
-  background: white;
+  background: #00bcd4;
+  color: white;
 }
 
 img.event-item {
@@ -245,7 +239,7 @@ img.dest-item {
 
   .datePicker {
     width: 60% !important;
-    margin: 3% 0%;
+    margin: 0;
   }
 
   .landingDescrip {
@@ -262,6 +256,7 @@ img.dest-item {
   }
 
   .addDest {
+    margin-top: 20px;
     width: 60%;
   }
 

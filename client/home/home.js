@@ -21,16 +21,17 @@ class Home extends React.Component {
       <div>
       <Card style={ { width: '80%', margin: '2% 10% 2% 10%' } }>
         <CardHeader
-          title={'To Begin!'}
+          title={'Enter a destination and date to begin:'}
         />
         <DestSearch style={ { width: '100%', margin: '5% 20%' } } />
         <TripTypeList />
         <List
-          style={ { width: '60%', margin: '0% 18%' } }
+          style={ { width: '60%', margin: '-3% 19%' } }
           subheader={'Oh the places you will go!'}
         >
           {this.props.destinations.map(destination =>
             <ListItem
+              style={{ marginTop: '-17px' }}
               primaryText={destination.get('location')}
             />
           )}
@@ -40,7 +41,7 @@ class Home extends React.Component {
         >
           <RaisedButton
             secondary label="Create Trip"
-            style={ { width: '60%', margin: '5% 20%' } }
+            style={ { width: '40%', margin: '5% 20%' } }
           />
         </Link>
       </Card>
