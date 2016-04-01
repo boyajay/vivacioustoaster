@@ -42,9 +42,28 @@ div.tooltip:hover span.tooltip-text {
   width: 100%;
 }
 
+#headerLogo {
+  height: 1.3em !important;
+  width: 4em !important;
+  position: fixed;
+  left: 120px;
+  top: 25px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
 .addDest {
   margin: 0% 0%;
   width: 40%;
+}
+
+.header {
+  font-family: 'Cinzel', serif !important;
+  position: flex;
 }
 
 .datePicker {
@@ -98,17 +117,17 @@ div.tooltip:hover span.tooltip-text {
 
 .logoPic {
   background-color: transparent;
-  top: 45%;
-  right: 7%;
+  height: 5em;
   padding-bottom: 2%;
   position: absolute;
+  right: 7%;
+  top: 45%;
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
   filter: FlipH;
   -ms-filter: "FlipH";
-  height: 5em;
 }
 
 .logo {
@@ -229,6 +248,12 @@ img.dest-item {
     margin: 3% 0%;
   }
 
+  .header {
+    font-size: 0;
+  }
+
+  .header
+
   .landingDescrip {
     font-size: 1.2em;
     opacity: 0.8;
@@ -236,6 +261,10 @@ img.dest-item {
     text-align: center;
     margin: 10% 10% 10% 10%;
     padding: 0.5em;
+  }
+
+  .logout {
+    margin-right: -30px;
   }
 
   .addDest {
