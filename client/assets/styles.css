@@ -1,0 +1,324 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  background-color: #e9eaed;
+}
+
+div.friendsRow {
+  margin: 0% 16px;
+  padding-bottom: 16px;
+}
+
+div.tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 0.25% 0.25%;
+}
+
+div.tooltip span.tooltip-text {
+  font-family: Helvetica;
+  font-size: 0.75em;
+  opacity: 0;
+  transition: opacity 1s;
+  top:100%;
+  left:0%;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 0.2em;
+  border-radius: 0.45em;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+}
+
+div.tooltip:hover span.tooltip-text {
+  opacity: 1;
+}
+
+.voteIcon {
+  float: right;
+  margin-top: -25px;
+}
+
+#destSearch {
+  justify-content: center;
+  margin: 0% 80% 0% 20%;
+  position: flex;
+  width: 100%;
+}
+
+#headerLogo {
+  height: 1.3em !important;
+  width: 4em !important;
+  position: fixed;
+  left: 120px;
+  top: 25px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.addDest {
+  margin: 0% 0%;
+  width: 40%;
+}
+
+.header {
+  font-family: 'Cinzel', serif !important;
+  position: fixed !important;
+  left: 0;
+  top: 0;
+}
+
+.cardContainer {
+  margin-left: 19%;
+}
+
+.datePicker {
+  justify-content: center;
+  margin: 3% 0% 0% 0%;
+  position: flex;
+  width: 40% !important;
+}
+
+.landingDescrip {
+  background-color: black;
+  color: white;
+  border: 2.5px solid #00cc00;
+  flex-grow: 1;
+  font-size: 2em;
+  opacity: 0.8;
+  position: relative;
+  text-align: center;
+  margin: 3% 20% 3% 20%;
+  padding: 1em;
+}
+
+.landingPage {
+  background-image: url("background.jpeg");
+  background-size: 100% 45em;
+  background-repeat: no-repeat;
+  border: 0;
+  flex-wrap: wrap;
+  min-width: 100%;
+  justify-content: center;
+  height: 45em;
+  position: flex;
+}
+
+.loginBtn {
+  font-size: 1em;
+  height: 55px;
+  width: 150px;
+  justify-content: center;
+  position: flex;
+  background-color: #3b5998;
+  color: white;
+  border-radius: 4px;
+}
+
+.loginForm {
+  justify-content: center;
+  position: flex;
+  text-align: center;
+}
+
+.logoPic {
+  background-color: transparent;
+  height: 5em;
+  padding-bottom: 2%;
+  position: absolute;
+  right: 7%;
+  top: 45%;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.logo {
+  color: #00cc00;
+  text-align: center;
+  text-shadow: -0.04em 0.02em #777777;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 8em;
+  position: flex;
+  right: 5%;
+}
+
+.geosuggest {
+  font-size: 18px;
+  font-size: 1rem;
+  height: 22px;
+  justify-content: center;
+  margin-bottom: 2%;
+  position: relative;
+  width: 38%;
+  text-align: left;
+}
+.geosuggest__input {
+  border: 2px solid transparent;
+  box-shadow: 0 0 1px #2b462b;
+  height: 100%;
+  padding: .5em;
+  font-size: 1em;
+
+  -webkit-transition: border 0.2s, box-shadow 0.2s;
+          transition: border 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.geosuggest__input:focus {
+  border-color: #267dc0;
+  box-shadow: 0 0 0 transparent;
+}
+.geosuggest__suggests {
+  background-color: #b3b3b3;
+  font-family: Helvetica;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  right: 0;
+  max-height: 25em;
+  padding: 0;
+  margin-top: -1px;
+  background: #fff;
+  border: 2px solid #267dc0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  list-style: none;
+  width: 600px;
+  z-index: 5;
+  -webkit-transition: max-height 0.2s, border 0.2s;
+          transition: max-height 0.2s, border 0.2s;
+}
+.geosuggest__suggests--hidden {
+  max-height: 0;
+  overflow: hidden;
+  border-width: 0;
+}
+
+.geosuggest-item {
+  background-color: #e5e5e5;
+  font-size: 18px;
+  font-size: 1rem;
+  padding: .5em .65em;
+  cursor: pointer;
+}
+
+.geosuggest-item:hover,
+.geosuggest-item:focus {
+  background: #00bcd4;
+  color:white;
+}
+
+.geosuggest-item--active {
+  background: #00bcd4;
+  color: white;
+}
+
+.tags {
+  width: 60%,
+  height: 100%,
+  overflow-y: auto,
+  margin: 5% 20%,
+  visibility: loading ? hidden : visible,
+}
+
+img.event-item {
+  min-height:15em;
+  max-height:25em;
+}
+
+img.dest-item {
+  min-height:25em;
+  max-height:80em;
+}
+
+@media (max-width: 600px) {
+  .cardContainer {
+    margin-left: 0%;
+  }
+
+  .geosuggest {
+    width: 53%;
+    left: 0;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .geosuggest__suggests {
+    width:250px;
+  }
+
+  .gridTile{
+    min-width: 100% !important;
+    clear: both;
+    width: 300px;
+  }
+
+  .datePicker {
+    width: 60% !important;
+    margin: 0;
+  }
+
+  .landingDescrip {
+    font-size: 1.2em;
+    opacity: 0.8;
+    position: relative;
+    text-align: center;
+    margin: 10% 10% 10% 10%;
+    padding: 0.5em;
+  }
+
+  .addDest {
+    margin-top: 20px;
+    width: 60%;
+  }
+
+  .logo {
+    font-size: 3em;
+  }
+
+  .logoPic {
+    height: 3em;
+    right: 0;
+    top: 60%;
+  }
+  .tagContainer .cardStyle{
+    margin: 0% 0%;
+    width: 600px !important;
+  }
+  .gridTile{
+    width: 100% !important;
+  }
+  div.gridList {
+  width: 100% !important;
+  margin-left: -130px;
+  }
+  .tagContainer {
+    margin-left: -80px;
+    width: 100%;
+  }
+
+  .tagContainer>div{
+    width: 100% !important;
+  }
+}
+
