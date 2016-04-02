@@ -1,7 +1,6 @@
 # Voyager
 AI Travel Agent
-> Pithy project description
-An intelligent, group-oriented decision-making travel app to help find places that fit your interests.
+An intelligent, group-oriented decision-making travel app to help find places that fit your interests. Designed for a clean and intuitive user experience, this app will help you plan all your voyages.
 
 ## Team
 
